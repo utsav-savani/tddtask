@@ -4,7 +4,8 @@ class StringCalculator {
   int add(String numbers) {
     if (numbers.isEmpty) return 0;
 
-    var parts = numbers.split(',');
+    var normalized = numbers.replaceAll('\n', ',');
+    var parts = normalized.split(',');
     return parts.map((p) => int.parse(p)).fold(0, (a, b) => a + b);
   }
 }
