@@ -36,4 +36,13 @@ void main() {
     var calc = StringCalculator();
     expect(() => calc.add('-1,2'), throwsA(isA<Exception>()));
   });
+
+  test('shows all negative numbers in exception message', () {
+    var calc = StringCalculator();
+    expect(
+      () => calc.add('-1,2,-3'),
+      throwsA(predicate((e) =>
+          e is Exception && e.toString().contains('-1') && e.toString().contains('-3'))),
+    );
+  });
 }
