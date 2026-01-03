@@ -65,4 +65,15 @@ void main() {
     var calc = StringCalculator();
     expect(calc.add('//[***][%%]\n1***2%%3'), 6);
   });
+
+  test('throws exception for invalid input', () {
+    var calc = StringCalculator();
+    expect(() => calc.add('1,a,3'), throwsA(isA<FormatException>()));
+  });
+
+  test('ignores empty parts between delimiters', () {
+    var calc = StringCalculator();
+    expect(calc.add('1,,3'), 4);
+    expect(calc.add(',1,2,'), 3);
+  });
 }
