@@ -16,4 +16,9 @@ void main() {
     var calc = StringCalculator();
     expect(calc.add('1,2'), 3);
   });
+
+  test('handles multiple numbers', () {
+    var calc = StringCalculator();
+    expect(calc.add('1,2,3'), 6);
+  });
 }
