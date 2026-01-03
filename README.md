@@ -55,9 +55,6 @@ This project implements a String Calculator that adds numbers from a string inpu
 ### Test Execution
 ![Test Results](screenshots/test_results.png)
 
-### Commit History (TDD Progression)
-![Commit History](screenshots/commit_history.png)
-
 ---
 
 ## Usage Examples
