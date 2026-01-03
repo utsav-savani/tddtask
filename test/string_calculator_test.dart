@@ -21,4 +21,9 @@ void main() {
     var calc = StringCalculator();
     expect(calc.add('1,2,3'), 6);
   });
+
+  test('handles newline as delimiter', () {
+    var calc = StringCalculator();
+    expect(calc.add('1\n2,3'), 6);
+  });
 }
