@@ -26,4 +26,14 @@ void main() {
     var calc = StringCalculator();
     expect(calc.add('1\n2,3'), 6);
   });
+
+  test('supports custom single-char delimiter', () {
+    var calc = StringCalculator();
+    expect(calc.add('//;\n1;2'), 3);
+  });
+
+  test('throws exception for negative numbers', () {
+    var calc = StringCalculator();
+    expect(() => calc.add('-1,2'), throwsA(isA<Exception>()));
+  });
 }
