@@ -60,4 +60,9 @@ void main() {
     var calc = StringCalculator();
     expect(calc.add('//[*][%]\n1*2%3'), 6);
   });
+
+  test('supports multiple multi-character delimiters', () {
+    var calc = StringCalculator();
+    expect(calc.add('//[***][%%]\n1***2%%3'), 6);
+  });
 }
